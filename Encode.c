@@ -15,7 +15,7 @@ int size_of_image(FILE *fp1)
 void secret_text(FILE *fp2)
 {
 	char ch;
-	while ((ch = getchar())!=EOF)
+	while ((ch = getchar())!='\n')
 	{
 		putc(ch,fp2);	//puts secret text to file
 	}
@@ -166,7 +166,7 @@ int Encoding(char *argv_2,char *argv_3,char *argv_4)
 	fp2 = fopen(argv_3, "w+");
 
 	//Entering secret text to file
-	printf("Enter your secret text and Press CTRL + D To Stop : \t");
+	printf("Enter your secret text and Press Enter To Stop : \t");
 	secret_text(fp2);
 
 	int size_txt = secret_text_size(fp2);
